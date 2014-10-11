@@ -1,6 +1,6 @@
 <?php
 
-namespace Beyerz\Bundle\OpenGraphProtocolBundle\Controller;
+namespace Beyerz\OpenGraphProtocolBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

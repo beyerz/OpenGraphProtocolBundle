@@ -1,10 +1,10 @@
 <?php
-namespace Beyerz\Bundle\OpenGraphProtocolBundle\Libraries;
+namespace Beyerz\OpenGraphProtocolBundle\Libraries;
 
 use Symfony\Component\ClassLoader\UniversalClassLoader;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
-use Beyerz\Bundle\OpenGraphProtocolBundle\Libraries\OpenGraphInterface;
+use Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraphInterface;
 /**
  * @author Lance Bailey
  *

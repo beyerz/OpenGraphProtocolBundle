@@ -1,5 +1,5 @@
 <?php
-namespace Beyerz\Bundle\OpenGraphProtocolBundle\Libraries;
+namespace Beyerz\OpenGraphProtocolBundle\Libraries;
 
 /**
  * @author Lance Bailey

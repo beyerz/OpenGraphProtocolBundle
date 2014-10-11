@@ -1,6 +1,6 @@
 <?php
 
-namespace Beyerz\Bundle\OpenGraphProtocolBundle\DependencyInjection;
+namespace Beyerz\OpenGraphProtocolBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

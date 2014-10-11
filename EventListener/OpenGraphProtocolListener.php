@@ -1,12 +1,12 @@
 <?php
-namespace Beyerz\Bundle\OpenGraphProtocolBundle\EventListener;
+namespace Beyerz\OpenGraphProtocolBundle\EventListener;
 
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
 
 use Symfony\Component\DependencyInjection\Container;
 
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
-use Beyerz\Bundle\OpenGraphProtocolBundle\Libraries\OpenGraph;
+use Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraph;
 
 use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -23,7 +23,7 @@ class OpenGraphProtocolListener{
     protected $twig;
     /**
      *
-     * @var \Beyerz\Bundle\OpenGraphProtocolBundle\Libraries\OpenGraph
+     * @var \Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraph
      */
     protected $ogp;
 
@@ -50,7 +50,7 @@ class OpenGraphProtocolListener{
 		$setterParams = $this->container->getParameter('setter');
 		$userClass = $setterParams['class'];
 		$loadedClass = $this->loadNameSpace($userClass);
-		/* @var $loadedClass \Beyerz\Bundle\OpenGraphProtocolBundle\DependencyInjection\OpenGraphSetter */
+		/* @var $loadedClass \Beyerz\OpenGraphProtocolBundle\DependencyInjection\OpenGraphSetter */
 // 		$loadedClass->dynamicSet(&$this->ogp, $event);
 
 		//convert all ogs to array for easy access
