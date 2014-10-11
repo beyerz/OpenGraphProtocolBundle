@@ -1,7 +1,7 @@
 parameters:
     open_graph.class: Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraph
 services:
-    open_graph:
+    beyerz.ogp.open_graph:
         class: "%open_graph.class%"
         arguments: ["@service_container"]
 #    open_graph_protocol_listener:

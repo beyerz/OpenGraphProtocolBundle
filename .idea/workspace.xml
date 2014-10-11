@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c04cac3-9772-42ef-b646-8904bf1cb862" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Lance\Documents\dev projects\Beyerz Symfony Bundles\OpenGraphProtocolBundle\Controller\DefaultController.php" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\Lance\Documents\dev projects\Beyerz Symfony Bundles\OpenGraphProtocolBundle\DependencyInjection\BeyerzOpenGraphProtocolExtension.php" afterPath="$PROJECT_DIR$/DependencyInjection/OpenGraphProtocolExtension.php" />
-      <change type="MOVED" beforePath="C:\Users\Lance\Documents\dev projects\Beyerz Symfony Bundles\OpenGraphProtocolBundle\Twig\Extensions\BeyerzOpenGraphProtocolExtension.php" afterPath="$PROJECT_DIR$/Twig/Extensions/OpenGraphProtocolExtension.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Libraries/Base.php" afterPath="$PROJECT_DIR$/Libraries/Base.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Libraries/Facebook.php" afterPath="$PROJECT_DIR$/Libraries/Facebook.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Libraries/OpenGraph.php" afterPath="$PROJECT_DIR$/Libraries/OpenGraph.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DependencyInjection/OpenGraphSetter.php" afterPath="$PROJECT_DIR$/DependencyInjection/OpenGraphSetter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DependencyInjection/OpenGraphSetterInterface.php" afterPath="$PROJECT_DIR$/DependencyInjection/OpenGraphSetterInterface.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/config/services.yml" afterPath="$PROJECT_DIR$/Resources/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="OpenGraphProtocolBundle.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -117,8 +108,8 @@
       <file leaf-file-name="services.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Resources/config/services.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4586331" vertical-offset="0" max-vertical-offset="556">
-              <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+            <state vertical-scroll-proportion="0.091726616" vertical-offset="0" max-vertical-offset="556">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -528,8 +519,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Resources/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4586331" vertical-offset="0" max-vertical-offset="556">
-          <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.091726616" vertical-offset="0" max-vertical-offset="556">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
           <folding />
         </state>
       </provider>
