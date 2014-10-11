@@ -1,5 +1,5 @@
 <?php
-namespace Beyerz\Bundle\OpenGraphProtocolBundle\Twig\Extensions;
+namespace Beyerz\OpenGraphProtocolBundle\Twig\Extensions;
 
 /**
  * @author Lance
