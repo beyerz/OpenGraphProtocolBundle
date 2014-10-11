@@ -12,7 +12,7 @@ services:
 #            - "@service_container"
 #        tags:
 #            - {name: kernel.event_listener, event: kernel.request, method: onKernelRequest}
-    jobberjabber.twig.jobberjabber_open_graph_protocol_extension:
+    jobberjabber.twig.beyerz_open_graph_protocol_extension:
         class: Beyerz\OpenGraphProtocolBundle\Twig\Extensions\BeyerzOpenGraphProtocolExtension
         tags:
             - { name: twig.extension }
