@@ -1,5 +1,5 @@
 {
-    "name" : "Beyerz/OpenGraphProtocolBundle",
+    "name" : "beyerz/open-graph-protocol-bundle",
     "description" : "Integration for open graph protocol and Symfony2",
     "type" : "symfony-bundle",
     "authors" : [{
