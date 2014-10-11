@@ -13,7 +13,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class BeyerzOpenGraphProtocolExtension extends Extension
+class OpenGraphProtocolExtension extends Extension
 {
     /**
      * {@inheritDoc}

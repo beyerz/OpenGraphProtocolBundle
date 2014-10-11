@@ -5,7 +5,7 @@ namespace Beyerz\Bundle\OpenGraphProtocolBundle\Twig\Extensions;
  * @author Lance
  *
  */
-class BeyerzOpenGraphProtocolExtension extends \Twig_Extension {
+class OpenGraphProtocolExtension extends \Twig_Extension {
 
 	public function getFunctions() {
 		return array(
@@ -30,7 +30,7 @@ class BeyerzOpenGraphProtocolExtension extends \Twig_Extension {
 	 * @see Twig_ExtensionInterface::getName()
 	 */
 	public function getName() {
-		return "beyerz_opengraphprotocol_extension";
+		return "opengraphprotocol_extension";
 	}
 }
 

@@ -4,7 +4,6 @@ namespace Beyerz\OpenGraphProtocolBundle\Libraries;
 use Symfony\Component\ClassLoader\UniversalClassLoader;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
-use Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraphInterface;
 /**
  * @author Lance Bailey
  *
@@ -15,7 +14,7 @@ class OpenGraph implements OpenGraphInterface {
 
 	/**
 	 *
-	 * @var array(\Beyerz\Bundle\OpenGraphProtocolBundle\Libraries\OpenGraphInterface)
+	 * @var array | \Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraphInterface
 	 */
 	private $ogpLibs = array();
 
@@ -40,12 +39,9 @@ class OpenGraph implements OpenGraphInterface {
 	public function setLibDefaults($libName){
 		//check if library was loaded and defaults are set in config
 		if(isset($this->ogpLibs[$libName])){
-			$lib = $this->getLoadedLib($libName);
-
 			//set default values
 			if(!empty($this->libraries[$libName]['default_values'])){
 				foreach ($this->libraries[$libName]['default_values'] as $defKey => $defValue){
-					/* @var $lib \Beyerz\Bundle\OpenGraphProtocolBundle\Libraries\OpenGraphInterface */
 					$this->ogpLibs[$libName]->addMeta($defKey, $defValue);
 				}
 			}

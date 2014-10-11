@@ -1,9 +1,9 @@
 <?php
-namespace Beyerz\Bundle\OpenGraphProtocolBundle\DependencyInjection;
-use Beyerz\Bundle\OpenGraphProtocolBundle\Libraries\OpenGraph;
+namespace Beyerz\OpenGraphProtocolBundle\DependencyInjection;
+use Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraph;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 /**
- * @author Lance
+ * @author Lance Bailey
  *
  */
 interface OpenGraphSetterInterface {

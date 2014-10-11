@@ -1,9 +1,7 @@
 <?php
 namespace Beyerz\OpenGraphProtocolBundle\Libraries;
-use Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraphInterface;
 /**
  * @author Lance Bailey
- * @property siteName
  */
 class Base implements OpenGraphInterface {
 	const BASE_NS_KEY = 'og:';
