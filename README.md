@@ -51,7 +51,7 @@ that you like
                     description: {{ default generic page description for your site }}
             facebook:
                 class: Jobberjabber\Bundle\OpenGraphProtocolBundle\Libraries\Facebook
-                default_values: { app_id: 647560795300383 }
+                default_values: { app_id: {{ Your apps facebook id }} }
 
 #### View
 
