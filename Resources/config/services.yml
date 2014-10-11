@@ -1,0 +1,18 @@
+parameters:
+    open_graph.class: Beyerz\Bundle\OpenGraphProtocolBundle\Libraries\OpenGraph
+services:
+    open_graph:
+        class: "%open_graph.class%"
+        arguments: ["@service_container"]
+#    open_graph_protocol_listener:
+#        class: Beyerz\Bundle\OpenGraphProtocolBundle\EventListener\OpenGraphProtocolListener
+#        arguments:
+#            - "@twig"
+#            - "@open_graph"
+#            - "@service_container"
+#        tags:
+#            - {name: kernel.event_listener, event: kernel.request, method: onKernelRequest}
+    jobberjabber.twig.jobberjabber_open_graph_protocol_extension:
+        class: Beyerz\Bundle\OpenGraphProtocolBundle\Twig\Extensions\BeyerzOpenGraphProtocolExtension
+        tags:
+            - { name: twig.extension }
