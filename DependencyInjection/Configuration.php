@@ -22,11 +22,6 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
         	->children()
-        		->arrayNode('setter')
-        			->children()
-	        			->scalarNode('class')->end()
-	        		->end()
-        		->end()
         		->arrayNode('libraries')
         			->prototype('array')
 	        			->children()

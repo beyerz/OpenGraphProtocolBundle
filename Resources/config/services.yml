@@ -1,17 +1,9 @@
 parameters:
-    open_graph.class: Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraph
+
 services:
     beyerz.ogp.open_graph:
-        class: "%open_graph.class%"
+        class: Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraph
         arguments: ["@service_container"]
-#    open_graph_protocol_listener:
-#        class: Beyerz\OpenGraphProtocolBundle\EventListener\OpenGraphProtocolListener
-#        arguments:
-#            - "@twig"
-#            - "@open_graph"
-#            - "@service_container"
-#        tags:
-#            - {name: kernel.event_listener, event: kernel.request, method: onKernelRequest}
     beyerz.twig.beyerz_open_graph_protocol_extension:
         class: Beyerz\OpenGraphProtocolBundle\Twig\Extensions\OpenGraphProtocolExtension
         tags:
