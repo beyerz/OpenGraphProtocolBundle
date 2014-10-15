@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2c04cac3-9772-42ef-b646-8904bf1cb862" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Libraries/OpenGraph.php" afterPath="$PROJECT_DIR$/Libraries/OpenGraph.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Twig/Extensions/OpenGraphProtocolExtension.php" afterPath="$PROJECT_DIR$/Twig/Extensions/OpenGraphProtocolExtension.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Resources/config/services.yml" afterPath="$PROJECT_DIR$/Resources/config/services.yml" />
     </list>
     <ignored path="OpenGraphProtocolBundle.iws" />
@@ -28,11 +30,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="OpenGraph.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OpenGraph.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Libraries/OpenGraph.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8287596" vertical-offset="0" max-vertical-offset="1768">
+            <state vertical-scroll-proportion="-64.07692" vertical-offset="0" max-vertical-offset="1768">
               <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.88754135" vertical-offset="436" max-vertical-offset="1343">
+              <caret line="73" column="57" selection-start-line="73" selection-start-column="57" selection-end-line="73" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -41,8 +56,18 @@
       <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Resources/config/services.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+              <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OpenGraphProtocolExtension.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Twig/Extensions/OpenGraphProtocolExtension.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-32.423077" vertical-offset="7" max-vertical-offset="952">
+              <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -71,17 +96,17 @@
         <option value="$PROJECT_DIR$/BeyerzOpenGraphProtocolBundle.php" />
         <option value="$PROJECT_DIR$/OpenGraphProtocolBundle.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/DependencyInjection/BeyerzOpenGraphProtocolExtension.php" />
         <option value="$PROJECT_DIR$/DependencyInjection/OpenGraphSetterInterface.php" />
         <option value="$PROJECT_DIR$/DependencyInjection/OpenGraphSetter.php" />
         <option value="$PROJECT_DIR$/Libraries/Base.php" />
         <option value="$PROJECT_DIR$/Libraries/Facebook.php" />
-        <option value="$PROJECT_DIR$/Twig/Extensions/OpenGraphProtocolExtension.php" />
         <option value="$PROJECT_DIR$/DependencyInjection/Configuration.php" />
         <option value="$PROJECT_DIR$/DependencyInjection/OpenGraphProtocolExtension.php" />
         <option value="$PROJECT_DIR$/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/Twig/Extensions/OpenGraphProtocolExtension.php" />
         <option value="$PROJECT_DIR$/Libraries/OpenGraph.php" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -222,6 +247,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="SearchEverywhereHistoryKey" value="OpenGraphProtocolExtension&#9;FILE&#9;file://C:/Users/Lance/Documents/dev projects/Beyerz Symfony Bundles/OpenGraphProtocolBundle/Twig/Extensions/OpenGraphProtocolExtension.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -563,16 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.866667" vertical-offset="635" max-vertical-offset="1224">
-          <caret line="53" column="66" selection-start-line="53" selection-start-column="66" selection-end-line="53" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Libraries/Base.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="748">
@@ -604,14 +620,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Twig/Extensions/OpenGraphProtocolExtension.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27324915" vertical-offset="0" max-vertical-offset="871">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DependencyInjection/Configuration.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="816">
@@ -624,7 +632,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DependencyInjection/OpenGraphProtocolExtension.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58553386" vertical-offset="0" max-vertical-offset="871">
+        <state vertical-scroll-proportion="0.55982435" vertical-offset="0" max-vertical-offset="911">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#70#129#0#PHP" expanded="true" />
@@ -632,18 +640,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Twig/Extensions/OpenGraphProtocolExtension.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-32.423077" vertical-offset="7" max-vertical-offset="952">
+          <caret line="50" column="2" selection-start-line="50" selection-start-column="2" selection-end-line="50" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Resources/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Libraries/OpenGraph.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8287596" vertical-offset="0" max-vertical-offset="1768">
+        <state vertical-scroll-proportion="-64.07692" vertical-offset="0" max-vertical-offset="1768">
           <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.88754135" vertical-offset="436" max-vertical-offset="1343">
+          <caret line="73" column="57" selection-start-line="73" selection-start-column="57" selection-end-line="73" selection-end-column="57" />
           <folding />
         </state>
       </provider>

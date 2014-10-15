@@ -47,7 +47,7 @@ that you like
                     image: {{ default image for your site }}
                     description: {{ default generic page description for your site }}
             facebook:
-                class: Jobberjabber\Bundle\OpenGraphProtocolBundle\Libraries\Facebook
+                class: Beyerz\OpenGraphProtocolBundle\Libraries\Facebook
                 default_values: { app_id: {{ Your apps facebook id }} }
 
 #### View
@@ -57,7 +57,18 @@ Include the OGP Metas in the `head` tag of your layout.
 With twig:
 
     {% block metas %}
-            {% if ogp is defined %}
-            	{{  array_to_meta(ogp)|raw }}
-        	{% endif %}
+            {{ ogp()|raw }}
     {% endblock %}
+
+#### Overriding Meta Values
+
+Its common that you would want to change meta values like title, image, description etc...
+This is easily done from within your page page controller (or any where that has access to the service container)
+
+#####From your Controller
+        
+    $ogp = $this->get('beyerz.ogp.open_graph');
+    $base = $ogp->get('base');
+    $base->addMeta('title', "My dynamic title");
+    $base->addMeta('url', $request->getSchemeAndHttpHost().$request->getRequestUri());
+    $base->addMeta('description', "My dynamic description");

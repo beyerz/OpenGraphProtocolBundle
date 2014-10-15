@@ -1,5 +1,6 @@
 <?php
 namespace Beyerz\OpenGraphProtocolBundle\Twig\Extensions;
+use Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraph;
 
 /**
  * @author Lance
@@ -7,31 +8,44 @@ namespace Beyerz\OpenGraphProtocolBundle\Twig\Extensions;
  */
 class OpenGraphProtocolExtension extends \Twig_Extension {
 
-	public function getFunctions() {
-		return array(
-				new \Twig_SimpleFunction('array_to_meta', array($this, 'arrayToMeta')));
-	}
+    /**
+     * @var \Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraph
+     */
+    private $openGraph;
 
-	/**
-	 *
-	 * @param array $metaArray
-	 * @return string
-	 */
-	public function arrayToMeta(array $metaArray) {
-		$html = '';
-		foreach ($metaArray as $metaProp=>$metaCont){
-			$html .= '<meta property="' . $metaProp . '" content="' . $metaCont . '">';
-		}
-		return $html;
-	}
+    public function getFunctions() {
+        return array(
+            new \Twig_SimpleFunction('ogp', array($this, 'renderMetaTags')));
+    }
+
+    /**
+     * @param OpenGraph $openGraph
+     */
+    public function setOpenGraph(OpenGraph $openGraph){
+        $this->openGraph = $openGraph;
+    }
+
+    /**
+     * @return string
+     */
+    public function renderMetaTags() {
+        //Flatten all the libraries
+        $libraries = $this->openGraph->metaToArray();
+        $html = '';
+
+        foreach ($libraries as $metaProp=>$metaCont){
+            $html .= '<meta property="' . $metaProp . '" content="' . $metaCont . '">';
+        }
+        return $html;
+    }
 
 
-	/* (non-PHPdoc)
-	 * @see Twig_ExtensionInterface::getName()
-	 */
-	public function getName() {
-		return "opengraphprotocol_extension";
-	}
+    /* (non-PHPdoc)
+     * @see Twig_ExtensionInterface::getName()
+     */
+    public function getName() {
+        return "opengraphprotocol_extension";
+    }
 }
 
 ?>
