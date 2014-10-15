@@ -3,7 +3,9 @@ parameters:
 services:
     beyerz.ogp.open_graph:
         class: Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraph
-        arguments: ["@service_container"]
+        calls:
+            - [setContainer, ["@service_container"]]
+            - [prepareLibraryDefaults]
     beyerz.twig.beyerz_open_graph_protocol_extension:
         class: Beyerz\OpenGraphProtocolBundle\Twig\Extensions\OpenGraphProtocolExtension
         tags:

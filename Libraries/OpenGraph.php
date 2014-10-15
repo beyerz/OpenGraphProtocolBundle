@@ -1,121 +1,98 @@
 <?php
 namespace Beyerz\OpenGraphProtocolBundle\Libraries;
 
-use Symfony\Component\ClassLoader\UniversalClassLoader;
-use Symfony\Component\DependencyInjection\Container;
-use Symfony\Component\Config\Definition\Exception\InvalidTypeException;
+use Symfony\Component\DependencyInjection\ContainerAware;
+
 /**
  * @author Lance Bailey
  *
  */
-class OpenGraph implements OpenGraphInterface {
+class OpenGraph extends ContainerAware implements OpenGraphInterface {
 
-	private $container;
+    const FIELD_CLASS = 'class';
+    const FIELD_DEFAULT_VALUES = 'default_values';
 
-	/**
-	 *
-	 * @var array | \Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraphInterface
-	 */
-	private $ogpLibs = array();
+    /**
+     *
+     * @var array | \Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraphInterface
+     */
+    private $libraries = array();
 
-	private $libraries = array();
+    /**
+     * Load the defined libraries and set the defaults on each of them
+     */
+    public function prepareLibraryDefaults(){
+        $libraries = $this->container->getParameter('libraries');
+        //Initiate Library Classes and load defaults
+        foreach($libraries as $library=>$defaults){
+            //load class
+            $this->addLibraryClass($library,$defaults[self::FIELD_CLASS]);
+            $this->setLibDefaults($library,$defaults[self::FIELD_DEFAULT_VALUES]);
+        }
+    }
 
-	public function __construct(Container $container) {
-		$this->container = $container;
-		$this->libraries = $this->container->getParameter('libraries');
-	}
+    private function addLibraryClass($alias,$nameSpace){
+        if(!isset($this->libraries[$alias])){
+            $class = new $nameSpace();
+            $this->libraries[$alias] = $class;
+        }
+        return $this->libraries[$alias];
+    }
 
-	/**
-	 * @return array of loaded libraries
-	 */
-	public function loadLibs(){
-		$libTypes = array_keys($this->libraries);
-		foreach ($libTypes as $libType){
-			$this->addLib($libType, $this->libraries[$libType]['class']);
-		}
-		return $libTypes;
-	}
+    public function setLibDefaults($alias, $defaults){
+        //check if library was loaded and defaults are set in config
+        if(isset($this->libraries[$alias])){
+            //set default values
+            if(!empty($defaults)){
+                foreach ($defaults as $defKey => $defValue){
+                    $this->libraries[$alias]->addMeta($defKey, $defValue);
+                }
+            }
+        }
+        else{
+            throw new \Exception("Library $alias must be loaded before you can assign attributes");
+        }
+    }
 
-	public function setLibDefaults($libName){
-		//check if library was loaded and defaults are set in config
-		if(isset($this->ogpLibs[$libName])){
-			//set default values
-			if(!empty($this->libraries[$libName]['default_values'])){
-				foreach ($this->libraries[$libName]['default_values'] as $defKey => $defValue){
-					$this->ogpLibs[$libName]->addMeta($defKey, $defValue);
-				}
-			}
-		}
-		else{
-			throw new \Exception("Library $libName must be loaded before you can assign attributes");
-		}
-	}
+    /**
+     * @param $alias
+     * @return null | \Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraphInterface
+     */
+    public function get($alias){
+        if(isset($this->libraries[$alias])){
+            return $this->libraries[$alias];
+        }
+        return NULL;
+    }
 
-	public function loadLib($libType) {
-		$libTypes = array_keys($this->libraries);
-		if (in_array($libType, $libTypes)) {
-			$lib = $this->addLib($libType, $this->libraries[$libType]['class']);
-			return $lib;
-		} else {
-			throw new InvalidTypeException(
-					'OGP Library does not exist for : ' . $libType);
-		}
-	}
+    public function all(){
+        return $this->libraries;
+    }
 
-	/**
-	 *
-	 * @param string $libName
-	 * @return \array(\Beyerz\Bundle\OpenGraphProtocolBundle\Libraries\OpenGraphInterface)
-	 */
-	public function getLoadedLib($libName){
-		return $this->ogpLibs[$libName];
-	}
+    /**
+     *
+     * @param string $libName
+     * @return \array(\Beyerz\Bundle\OpenGraphProtocolBundle\Libraries\OpenGraphInterface)
+     */
+    public function getLoadedLib($libName){
+        return $this->libraries[$libName];
+    }
 
-	private function addLib($libName, $class) {
-		if(!isset($this->ogpLibs[$libName])){
-			$loadedClass = $this->loadNameSpace($class);
-			$this->ogpLibs[$libName] = $loadedClass;
-		}
-		return $this->getLoadedLib($libName);
-	}
+    public function metaToArray() {
+        $metas = array();
+        foreach ($this->libraries as $type=>&$lib){
+            $metas[$type] = $lib->metaToArray();
+        }
+        //flatten metas
+        $flatMetas = iterator_to_array(new \RecursiveIteratorIterator(new \RecursiveArrayIterator($metas)), TRUE);
+        return $flatMetas;
+    }
 
-	private function loadNameSpace($class) {
-		if (false !== $pos = strrpos($class, '\\')) {
-			// namespaced class name
-			$namespace = substr($class, 0, $pos);
-		}
-
-		/* @var $kernel \AppKernel */
-		$kernel = $this->container->get('kernel');
-		$srcPath = $kernel->getRootDir() . "/../src";
-		$loader = new UniversalClassLoader();
-		// register classes with namespaces
-		$loader->registerNamespaces(array($namespace => $srcPath,));
-
-		// to enable searching the include path (e.g. for PEAR packages)
-		$loader->useIncludePath(true);
-
-		// activate the autoloader
-		$loader->register();
-		$loader->loadClass($class);
-		return $loadedClass = new $class;
-	}
-
-	public function metaToArray() {
-		$metas = array();
-		foreach ($this->ogpLibs as $type=>&$lib){
-			$metas[$type] = $lib->metaToArray();
-		}
-		//flatten metas
-		$flatMetas = iterator_to_array(new \RecursiveIteratorIterator(new \RecursiveArrayIterator($metas)), TRUE);
-		return $flatMetas;
-	}
-
-	public function addMeta($property, $content) {
-		return FALSE;
-	}
-	public function removeMeta() {
-		return FALSE;
-	}
+    public function addMeta($property, $content) {
+        return FALSE;
+    }
+    public function removeMeta() {
+        return FALSE;
+    }
 
 }
