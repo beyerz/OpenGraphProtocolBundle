@@ -31,14 +31,11 @@ Add OpenGraphBundle to the `registerBundles()` method of your application kernel
 Enable loading of the OGP service and setting default values by adding the following to
 the application's `config.yml` file:
 
-A default setter is provided, but you can define your own setter if you like
 A Base and facebook library are currently supported, but you can add as many libraries with as many default values
 that you like
 
     #OGP Bundle
     beyerz_open_graph_protocol:
-        setter:
-            class: Beyerz\SiteBundle\DependencyInjection\OpenGraphSetter
         libraries:
             base:
                 class: Beyerz\OpenGraphProtocolBundle\Libraries\Base
