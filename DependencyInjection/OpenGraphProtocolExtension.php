@@ -28,7 +28,6 @@ class OpenGraphProtocolExtension extends Extension
         	throw new InvalidConfigurationException("Please ensure you have added config parameters for " . $this->getAlias());
         }
         $container->setParameter('libraries', $config['libraries']);
-        $container->setParameter('setter', $config['setter']);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
