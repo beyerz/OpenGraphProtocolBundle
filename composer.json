@@ -1,6 +1,6 @@
 {
     "name" : "beyerz/open-graph-protocol-bundle",
-    "description" : "Integration for open graph protocol and Symfony2",
+    "description" : "Integration for OpenGraph protocol and Symfony2",
     "type" : "symfony-bundle",
     "authors" : [{
         "name" : "Lance Bailey",
@@ -8,7 +8,12 @@
     }],
     "keywords" : [
         "Open Graph Protocol",
-        "Facebook graph"
+        "Facebook graph",
+        "opengraph",
+        "og",
+        "OpenGraph Protocol",
+        "Symfony",
+        "Symfony2"
     ],
     "license" : [
         "MIT"
