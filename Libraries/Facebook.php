@@ -25,12 +25,14 @@ class Facebook implements OpenGraphInterface {
 
 	public function addMeta($property, $content) {
 		if(property_exists($this, $property)){
-				$this->$property = array(self::BASE_NS_KEY . $property=>$content);
-			}
+			$this->$property = array(self::BASE_NS_KEY . $property=>$content);
+		}
+
+		return $this;
 	}
 
 	public function removeMeta() {
-
+		return $this;
 	}
 
 }
