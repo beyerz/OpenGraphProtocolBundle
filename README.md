@@ -35,7 +35,7 @@ A Base and facebook library are currently supported, but you can add as many lib
 that you like
 
     #OGP Bundle
-    beyerz_open_graph_protocol:
+    open_graph_protocol:
         libraries:
             base:
                 class: Beyerz\OpenGraphProtocolBundle\Libraries\Base

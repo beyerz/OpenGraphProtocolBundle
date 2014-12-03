@@ -30,9 +30,11 @@ class Base implements OpenGraphInterface {
 		if(property_exists($this, $property)){
 			$this->$property = array(self::BASE_NS_KEY . $property=>$content);
 		}
+
+		return $this;
 	}
 	public function removeMeta() {
-
+		return $this;
 	}
 
 }

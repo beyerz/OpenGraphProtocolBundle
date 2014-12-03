@@ -34,7 +34,7 @@ class OpenGraphProtocolExtension extends \Twig_Extension {
         $html = '';
 
         foreach ($libraries as $metaProp=>$metaCont){
-            $html .= '<meta property="' . $metaProp . '" content="' . $metaCont . '">';
+            $html .= '<meta property="' . $metaProp . '" content="' . $metaCont . '" />'.PHP_EOL;
         }
         return $html;
     }
