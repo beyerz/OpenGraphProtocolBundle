@@ -6,10 +6,7 @@ namespace Beyerz\OpenGraphProtocolBundle\Libraries;
  *
  */
 interface OpenGraphInterface {
-
 	public function metaToArray();
 	public function addMeta($property, $content);
-	public function removeMeta();
+	public function removeMeta($property);
 }
-
-?>

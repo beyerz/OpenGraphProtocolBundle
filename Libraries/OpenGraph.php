@@ -13,13 +13,13 @@ class OpenGraph extends ContainerAware implements OpenGraphInterface {
     const FIELD_DEFAULT_VALUES = 'default_values';
 
     /**
-     *
-     * @var array | \Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraphInterface
+     * @var \Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraphInterface[]
      */
     private $libraries = array();
 
     /**
      * Load the defined libraries and set the defaults on each of them
+     * @throws \Exception
      */
     public function prepareLibraryDefaults(){
         $libraries = $this->container->getParameter('libraries');
@@ -31,6 +31,11 @@ class OpenGraph extends ContainerAware implements OpenGraphInterface {
         }
     }
 
+    /**
+     * @param $alias
+     * @param $nameSpace
+     * @return mixed
+     */
     private function addLibraryClass($alias,$nameSpace){
         if(!isset($this->libraries[$alias])){
             $class = new $nameSpace();
@@ -39,7 +44,12 @@ class OpenGraph extends ContainerAware implements OpenGraphInterface {
         return $this->libraries[$alias];
     }
 
-    public function setLibDefaults($alias, $defaults){
+    /**
+     * @param string $alias
+     * @param array $defaults
+     * @throws \Exception
+     */
+    public function setLibDefaults($alias, array $defaults){
         //check if library was loaded and defaults are set in config
         if(isset($this->libraries[$alias])){
             //set default values
@@ -55,7 +65,7 @@ class OpenGraph extends ContainerAware implements OpenGraphInterface {
     }
 
     /**
-     * @param $alias
+     * @param string $alias
      * @return null | \Beyerz\OpenGraphProtocolBundle\Libraries\OpenGraphInterface
      */
     public function get($alias){
@@ -71,13 +81,16 @@ class OpenGraph extends ContainerAware implements OpenGraphInterface {
 
     /**
      *
-     * @param string $libName
+     * @param string string $libName
      * @return \array(\Beyerz\Bundle\OpenGraphProtocolBundle\Libraries\OpenGraphInterface)
      */
     public function getLoadedLib($libName){
         return $this->libraries[$libName];
     }
 
+    /**
+     * @return array
+     */
     public function metaToArray() {
         $metas = array();
         foreach ($this->libraries as $type=>&$lib){
@@ -88,10 +101,19 @@ class OpenGraph extends ContainerAware implements OpenGraphInterface {
         return $flatMetas;
     }
 
+    /**
+     * @param $property
+     * @param $content
+     * @return bool
+     */
     public function addMeta($property, $content) {
         return FALSE;
     }
-    public function removeMeta() {
+
+    /**
+     * @return bool
+     */
+    public function removeMeta($property) {
         return FALSE;
     }
 

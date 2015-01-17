@@ -5,7 +5,7 @@
  */
 namespace Beyerz\OpenGraphProtocolBundle\Libraries;
 
-class Twitter implements OpenGraphInterface {
+class Twitter extends BaseOpenGraphLibrary {
     const BASE_NS_KEY = 'twitter:';
 
     const CARD_TYPE_SUMMARY = "summary";
@@ -16,30 +16,10 @@ class Twitter implements OpenGraphInterface {
     const CARD_TYPE_PLAYER = "player";
     const CARD_TYPE_PRODUCT = "product";
 
-    protected $app_id;
+    protected $card;
 
-    public function metaToArray() {
-        $properties = get_class_vars(__CLASS__);
-        $metaArray = array();
-        foreach($properties as $property=>$value){
-            if(!empty($this->$property)){
-                foreach ($this->$property as $prop=>$content){
-                    $metaArray[$prop] = $content;
-                }
-            }
-        }
-        return $metaArray;
-    }
-
-    public function addMeta($property, $content) {
-        if(property_exists($this, $property)){
-            $this->$property = array(self::BASE_NS_KEY . $property=>$content);
-        }
-
-        return $this;
-    }
-
-    public function removeMeta() {
-        return $this;
+    protected function getLibraryNamespace()
+    {
+        return self::BASE_NS_KEY;
     }
 }
