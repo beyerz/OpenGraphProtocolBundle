@@ -76,5 +76,6 @@ This is easily done from within your page page controller (or any where that has
 ### Testing Tools
 Facebook
 * https://developers.facebook.com/tools/debug/
+
 Twitter
 * https://cards-dev.twitter.com/validator
