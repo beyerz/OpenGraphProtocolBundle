@@ -34,7 +34,4 @@ class Facebook implements OpenGraphInterface {
 	public function removeMeta() {
 		return $this;
 	}
-
 }
-
-?>
