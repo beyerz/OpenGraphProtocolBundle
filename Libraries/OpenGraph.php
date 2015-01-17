@@ -94,6 +94,7 @@ class OpenGraph extends ContainerAware implements OpenGraphInterface {
     public function metaToArray() {
         $metas = array();
         foreach ($this->libraries as $type=>&$lib){
+            /* @var $lib \Beyerz\OpenGraphProtocolBundle\Libraries\BaseOpenGraphLibrary */
             $metas[$type] = $lib->metaToArray();
         }
         //flatten metas

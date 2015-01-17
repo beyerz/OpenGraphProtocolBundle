@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Lance
+ * @author: Lance Bailey
  * Date: 2015/01/17
  * Time: 07:46 PM
  */
@@ -17,7 +17,7 @@ abstract class BaseOpenGraphLibrary implements OpenGraphInterface {
      */
     public function metaToArray()
     {
-        $properties = get_class_vars(__CLASS__);
+        $properties = get_object_vars($this);
         $metaArray = array();
         foreach($properties as $property=>$value){
             if(!empty($this->$property)){
