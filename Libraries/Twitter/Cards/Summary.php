@@ -11,7 +11,7 @@ use Beyerz\OpenGraphProtocolBundle\Libraries\Twitter;
 
 class Summary extends BaseOpenGraphLibrary{
 
-    protected $card;
+    protected $card = 'summary';
     protected $site;
     protected $description;
     protected $image;
