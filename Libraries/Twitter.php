@@ -35,7 +35,10 @@ class Twitter extends BaseOpenGraphLibrary {
     public function addMeta($property, $content)
     {
         if($property == 'card'){
+            //use the card type to get the correct rendering factory
             $this->card = Factory::build($content);
+            //set the card type
+            $this->card->addMeta($property, $content);
         }else{
             if(is_null($this->card)){
                 throw new TwitterCardException("Card Type needs to be set before any meta values can be assigned");
