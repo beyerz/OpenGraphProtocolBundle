@@ -12,6 +12,13 @@ use Beyerz\OpenGraphProtocolBundle\Libraries\Twitter;
 
 class Photo extends BaseOpenGraphLibrary{
 
+    protected $card = 'photo';
+    protected $site;
+    protected $title = '';
+    protected $image;
+    protected $image_width;
+    protected $image_height;
+
     /**
      * @return string
      */

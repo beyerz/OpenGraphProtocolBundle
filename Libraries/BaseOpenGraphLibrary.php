@@ -22,6 +22,10 @@ abstract class BaseOpenGraphLibrary implements OpenGraphInterface {
         foreach($properties as $property=>$value){
             if(!empty($this->$property)){
                 foreach ($this->$property as $prop=>$content){
+                    //lets check if should place : in the property name
+                    if(strstr($prop,'_')){
+                        $prop = str_replace('_',':',$prop);
+                    }
                     $metaArray[$prop] = $content;
                 }
             }
