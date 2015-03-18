@@ -47,5 +47,3 @@ class OpenGraphProtocolExtension extends \Twig_Extension {
         return "opengraphprotocol_extension";
     }
 }
-
-?>
