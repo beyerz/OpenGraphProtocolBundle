@@ -72,3 +72,10 @@ This is easily done from within your page page controller (or any where that has
     $base->addMeta('title', "My dynamic title");
     $base->addMeta('url', $request->getSchemeAndHttpHost().$request->getRequestUri());
     $base->addMeta('description', "My dynamic description");
+    
+### Testing Tools
+Facebook
+* https://developers.facebook.com/tools/debug/
+
+Twitter
+* https://cards-dev.twitter.com/validator
