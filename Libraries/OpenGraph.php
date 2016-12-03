@@ -1,13 +1,15 @@
 <?php
 namespace Beyerz\OpenGraphProtocolBundle\Libraries;
 
-use Symfony\Component\DependencyInjection\ContainerAware;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
 /**
  * @author Lance Bailey
  *
  */
-class OpenGraph extends ContainerAware implements OpenGraphInterface {
+class OpenGraph implements OpenGraphInterface {
+
+    use ContainerAwareTrait;
 
     const FIELD_CLASS = 'class';
     const FIELD_DEFAULT_VALUES = 'default_values';
