@@ -24,6 +24,5 @@
         "psr-4" : {
             "Beyerz\\OpenGraphProtocolBundle\\" : ""
         }
-    },
-    "target-dir" : "Beyerz/OpenGraphProtocolBundle"
+    }
 }
