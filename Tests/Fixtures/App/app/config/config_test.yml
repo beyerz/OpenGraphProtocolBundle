@@ -1,0 +1,23 @@
+imports:
+    - { resource: config.yml }
+
+framework:
+    test: ~
+    session:
+        storage_id: session.storage.filesystem
+
+#OGP Bundle
+open_graph_protocol:
+  libraries:
+    base:
+      class: Beyerz\OpenGraphProtocolBundle\Libraries\Base
+      default_values:
+        site_name: "example.com"
+        type: "fun"
+        title: "Default Title"
+        url:  "example.com"
+        image:  "example.com"
+        description:  "sample description"
+    facebook:
+      class: Beyerz\OpenGraphProtocolBundle\Libraries\Facebook
+      default_values: { app_id: 123 }
