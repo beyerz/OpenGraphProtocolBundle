@@ -1,32 +1,37 @@
-OpenGraphProtocolBundle
-=======================
-
-Easy Integration for Symfony2 projects requiring opengraph
+[![Build Status](https://travis-ci.org/beyerz/OpenGraphProtocolBundle.svg?branch=master)](https://travis-ci.org/beyerz/OpenGraphProtocolBundle)
 
 # OpenGraphProtocolBundle
 
-The OpenGraphBundle enables easy integration for Symfony2 and twig views to incorporate the Open Grpah Protocols
+Easy Integration for Symfony2 projects requiring opengraph
 
-## Installation
+The OpenGraphBundle enables easy integration for Symfony2 and twig views to incorporate the Open Graph Protocols
+
+**Important Note:
+If you are using symfony version less than 2.8, please stay with build v1.0 as v2.0 may not work correctly due to symfony using traits for container awareness**
+
+
+# Installation
 
 ### Composer
 
-    require: "beyerz/open-graph-protocol-bundle": "dev-master"
+```bash
+composer require beyerz/open-graph-protocol-bundle
+```
 
 ### Application Kernel
 
 Add OpenGraphBundle to the `registerBundles()` method of your application kernel:
 
-    public function registerBundles()
-    {
-        return array(
-            new Beyerz\OpenGraphProtocolBundle\OpenGraphProtocolBundle(),
-        );
-    }
+```php
+public function registerBundles()
+{
+    return array(
+        new Beyerz\OpenGraphProtocolBundle\OpenGraphProtocolBundle(),
+    );
+}
+```
 
-## Configuration
-
-### Application config.yml
+### Config
 
 Enable loading of the OGP service and setting default values by adding the following to
 the application's `config.yml` file:
@@ -34,23 +39,27 @@ the application's `config.yml` file:
 A Base and facebook library are currently supported, but you can add as many libraries with as many default values
 that you like
 
-    #OGP Bundle
-    open_graph_protocol:
-        libraries:
-            base:
-                class: Beyerz\OpenGraphProtocolBundle\Libraries\Base
-                default_values:
-                    site_name: {{ default value for website name }}
-                    type: {{ default value for website type }}
-                    title: {{ default value for any page title }}
-                    url: {{ default value for any canonical url (acts as a fall back for bad pages) }}
-                    image: {{ default image for your site }}
-                    description: {{ default generic page description for your site }}
-            facebook:
-                class: Beyerz\OpenGraphProtocolBundle\Libraries\Facebook
-                default_values: { app_id: {{ Your apps facebook id }} }
+```yaml
+#OGP Bundle
+open_graph_protocol:
+    libraries:
+        base:
+            class: Beyerz\OpenGraphProtocolBundle\Libraries\Base
+            default_values:
+                site_name: {{ default value for website name }}
+                type: {{ default value for website type }}
+                title: {{ default value for any page title }}
+                url: {{ default value for any canonical url (acts as a fall back for bad pages) }}
+                image: {{ default image for your site }}
+                description: {{ default generic page description for your site }}
+        facebook:
+            class: Beyerz\OpenGraphProtocolBundle\Libraries\Facebook
+            default_values: { app_id: {{ Your apps facebook id }} }
+```
 
-#### View
+# Documentation
+
+### View
 
 Include the OGP Metas in the `head` tag of your layout.
 
@@ -60,12 +69,12 @@ With twig:
             {{ ogp()|raw }}
     {% endblock %}
 
-#### Overriding Meta Values
+### Overriding Meta Values
 
 Its common that you would want to change meta values like title, image, description etc...
 This is easily done from within your page page controller (or any where that has access to the service container)
 
-#####From your Controller
+**From your Controller**
         
     $ogp = $this->get('beyerz.ogp.open_graph');
     $base = $ogp->get('base');

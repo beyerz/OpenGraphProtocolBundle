@@ -1,0 +1,3 @@
+check_book_io:
+    resource: "@OpenGraphProtocolBundle/Resources/config/routing.yml"
+    prefix:   /
