@@ -1,3 +1,5 @@
+[![Packagist](https://img.shields.io/packagist/v/beyerz/open-graph-protocol-bundle.svg)](https://packagist.org/packages/beyerz/open-graph-protocol-bundle)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.6-8892BF.svg?style=flat-square)](https://php.net/)
 [![Build Status](https://travis-ci.org/beyerz/OpenGraphProtocolBundle.svg?branch=master)](https://travis-ci.org/beyerz/OpenGraphProtocolBundle)
 
 # OpenGraphProtocolBundle
