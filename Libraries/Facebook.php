@@ -11,7 +11,7 @@ class Facebook implements OpenGraphInterface {
 	protected $app_id;
 
 	public function metaToArray() {
-		$properties = get_class_vars(__CLASS__);
+		$properties = get_class_vars(get_called_class());
 		$metaArray = array();
 		foreach($properties as $property=>$value){
 			if(!empty($this->$property)){
